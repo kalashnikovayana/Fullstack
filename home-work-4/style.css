@@ -1,0 +1,39 @@
+h2 {
+    color: red;
+}
+
+h2 + p {
+    color: blue;
+}
+
+.class-selector {
+    color: green;
+}
+
+#id-selector {
+    color: purple;
+}
+
+[title] {
+    color: orange;
+}
+
+div p {
+    color: brown;
+}
+
+ul > li {
+    color: darkcyan;
+}
+
+article.note[data-type="important"] {
+    color: deeppink;
+}
+
+section .deep-text span {
+    color: darkblue;
+}
+
+main > div.example[data-color] p.special {
+    color: darkgreen;
+}

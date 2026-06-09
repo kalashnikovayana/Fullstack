@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ 4.1. Селектори CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Застосовується до тегів h2, селектор h2, вага 1</h2>
+
+    <p>Застосовується до тегів p, які стоять одразу після h2, селектор h2 + p, вага 2</p>
+
+    <p class="class-selector">Застосовується до елемента з класом class-selector, селектор .class-selector, вага 10</p>
+
+    <p id="id-selector">Застосовується до елемента з id id-selector, селектор #id-selector, вага 100</p>
+
+    <p title="attribute-selector">Застосовується до елемента з атрибутом title, селектор [title], вага 10</p>
+
+    <div>
+        <p>Застосовується до тегів p, вкладених у div, селектор div p, вага 2</p>
+    </div>
+
+    <ul>
+        <li>Застосовується до тегів li, які є дочірніми для ul, селектор ul > li, вага 2</li>
+    </ul>
+
+    <article class="note" data-type="important">
+        Застосовується до тегу article з класом note та атрибутом data-type="important", селектор article.note[data-type="important"], вага 21
+    </article>
+
+    <section>
+        <div class="deep-text">
+            <span>Застосовується до span, вкладеного в елемент з класом deep-text всередині section, селектор section .deep-text span, вага 12</span>
+        </div>
+    </section>
+
+    <main>
+        <div class="example" data-color="dark">
+            <p class="special">Застосовується до p з класом special, який вкладений у div з класом example та атрибутом data-color всередині main, селектор main > div.example[data-color] p.special, вага 33</p>
+        </div>
+    </main>
+</body>
+</html>
