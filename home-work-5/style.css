@@ -1,0 +1,14 @@
+.mondrian-table {
+        border-collapse: collapse;
+        width: 300px;
+        height: 300px;
+    }
+    .mondrian-table td {
+        border: 5px solid black; /* Товсті чорні лінії */
+        padding: 0;
+    }
+    /* Кольори */
+    .red { background-color: #ff0000; }
+    .blue { background-color: #0000ff; }
+    .yellow { background-color: #ffff00; }
+    .white { background-color: #ffffff; }
