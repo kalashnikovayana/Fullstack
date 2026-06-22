@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Float та Clear</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 860px;
+      margin: 30px auto;
+      padding: 0 20px;
+      color: #333;
+    }
+    h1 { color: #2c5282; }
+    h2 { color: #2b6cb0; margin-top: 40px; }
+    .explanation {
+      background: #ebf8ff;
+      border-left: 4px solid #4299e1;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    .demo {
+      border: 2px dashed #aaa;
+      padding: 12px;
+      margin: 16px 0;
+      background: #fafafa;
+      overflow: hidden;
+    }
+    a.back { display: inline-block; margin-top: 30px; color: #2b6cb0; }
+
+    .float-left {
+      float: left;
+      width: 120px;
+      height: 80px;
+      background: #bee3f8;
+      border: 2px solid #4299e1;
+      margin: 0 12px 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .float-right {
+      float: right;
+      width: 120px;
+      height: 80px;
+      background: #fefcbf;
+      border: 2px solid #d69e2e;
+      margin: 0 0 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .float-card {
+      float: left;
+      width: 30%;
+      margin: 1%;
+      background: #c6f6d5;
+      border: 2px solid #38a169;
+      padding: 10px;
+      text-align: center;
+      min-height: 60px;
+    }
+
+    .clear-left  { clear: left; }
+    .clear-right { clear: right; }
+    .clear-both  { clear: both; }
+
+    .highlight {
+      background: #fed7e2;
+      border: 2px solid #d53f8c;
+      padding: 8px;
+      margin: 6px 0;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>Float та Clear</h1>
+  <a class="back" href="index.html">← На головну</a>
+
+  <h2>1. float: left</h2>
+  <div class="explanation">
+    Елемент "виривається" зі звичайного потоку і притискається до лівого краю.
+    Текст та інші інлайнові елементи обтікають його справа.
+  </div>
+  <div class="demo">
+    <div class="float-left">float: left</div>
+    <p>
+      Цей текст обтікає блок зліва. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Елемент «виплив» вліво, і текст займає простір справа від нього.
+    </p>
+  </div>
+
+  <h2>2. float: right</h2>
+  <div class="explanation">
+    Те ж саме, але елемент притискається до правого краю. Текст обтікає зліва.
+  </div>
+  <div class="demo">
+    <div class="float-right">float: right</div>
+    <p>
+      Цей текст обтікає блок справа. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.
+      Блок «виплив» вправо, текст — зліва від нього.
+    </p>
+  </div>
+
+  <h2>3. Кілька float: left поруч</h2>
+  <div class="explanation">
+    Float-елементи можна ставити в ряд — вони будуть розміщуватись один за одним.
+    Саме так раніше верстали колонки (до появи flexbox/grid).
+  </div>
+  <div class="demo clearfix">
+    <div class="float-card">Картка 1</div>
+    <div class="float-card">Картка 2</div>
+    <div class="float-card">Картка 3</div>
+  </div>
+
+  <h2>4. clear — скасування обтікання</h2>
+  <div class="explanation">
+    <code>clear: left</code> — елемент починається нижче всіх float-left елементів.<br/>
+    <code>clear: right</code> — нижче float-right.<br/>
+    <code>clear: both</code> — нижче всіх float-елементів з обох боків.
+  </div>
+  <div class="demo">
+    <div class="float-left">Float left</div>
+    <p>Цей текст обтікає блок зліва.</p>
+    <p class="clear-left highlight">
+      Я маю <code>clear: left</code> — тому починаюсь нижче float-left елемента,
+      не обтікаю його.
+    </p>
+  </div>
+
+  <div class="demo">
+    <div class="float-left">Float left</div>
+    <div class="float-right">Float right</div>
+    <p class="clear-both highlight">
+      Я маю <code>clear: both</code> — починаюсь нижче ВСІХ float-елементів.
+    </p>
+  </div>
+
+  <h2>5. Clearfix — контейнер «не бачить» float-дітей</h2>
+  <div class="explanation">
+    Якщо всі діти контейнера є float — контейнер «схлопується» до нульової висоти.
+    Рішення: clearfix через псевдоелемент <code>::after</code>.
+  </div>
+
+  <p><strong>БЕЗ clearfix</strong> — контейнер схлопується (червона рамка не охоплює карток):</p>
+  <div style="border: 3px solid red; padding: 8px; background: #fff5f5;">
+    <div class="float-card" style="background:#fed7e2; border-color:#e53e3e;">Картка 1</div>
+    <div class="float-card" style="background:#fed7e2; border-color:#e53e3e;">Картка 2</div>
+  </div>
+  <div style="clear:both; margin-bottom:10px;"></div>
+
+  <p><strong>З clearfix</strong> — контейнер охоплює всіх float-дітей (зелена рамка):</p>
+  <div class="clearfix" style="border: 3px solid #38a169; padding: 8px; background: #f0fff4;">
+    <div class="float-card">Картка 1</div>
+    <div class="float-card">Картка 2</div>
+  </div>
+</body>
+</html>

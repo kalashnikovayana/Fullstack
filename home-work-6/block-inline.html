@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Блокові та інлайнові елементи</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      color: #333;
+    }
+    h1 { color: #2c5282; }
+    h2 { color: #2b6cb0; margin-top: 40px; }
+    .explanation {
+      background: #ebf8ff;
+      border-left: 4px solid #4299e1;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+
+    .block-demo div {
+      background: #bee3f8;
+      border: 2px solid #4299e1;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    .inline-demo span {
+      background: #fefcbf;
+      border: 2px solid #d69e2e;
+      padding: 4px 8px;
+    }
+
+    .span-as-block {
+      display: block;
+      background: #c6f6d5;
+      border: 2px solid #38a169;
+      padding: 10px;
+      margin: 8px 0;
+    }
+    .div-as-inline {
+      display: inline;
+      background: #fed7e2;
+      border: 2px solid #d53f8c;
+      padding: 4px 8px;
+    }
+
+    a.back { display: inline-block; margin-top: 30px; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+  <h1>Блокові та інлайнові елементи</h1>
+  <a class="back" href="index.html">← На головну</a>
+
+  <h2>1. Блокові елементи — &lt;div&gt;</h2>
+  <div class="explanation">
+    <strong>Блоковий елемент</strong> займає всю доступну ширину рядка і починається з нового рядка.
+    Кожен <code>&lt;div&gt;</code> — окремий «прямокутник» у потоці сторінки.
+  </div>
+
+  <div class="block-demo">
+    <div>Блок 1 — займає весь рядок</div>
+    <div>Блок 2 — теж займає весь рядок</div>
+    <div>Блок 3 — і цей теж</div>
+  </div>
+
+  <h2>2. Інлайнові елементи — &lt;span&gt;</h2>
+  <div class="explanation">
+    <strong>Інлайновий елемент</strong> займає лише стільки місця, скільки потрібно для його вмісту,
+    і не починається з нового рядка — елементи стоять один за одним у рядку.
+  </div>
+
+  <div class="inline-demo">
+    <p>
+      Це звичайний текст, а ось
+      <span>виділений span</span>,
+      і ще один
+      <span>другий span</span>,
+      і вони всі в одному рядку.
+    </p>
+  </div>
+
+  <h2>3. Зміна поведінки через display</h2>
+  <div class="explanation">
+    За допомогою CSS можна зробити <code>&lt;span&gt;</code> блоковим (display: block),
+    а <code>&lt;div&gt;</code> — інлайновим (display: inline).
+  </div>
+
+  <p><strong>span</strong> зі стилем <code>display: block</code>:</p>
+  <span class="span-as-block">Я span, але поводжусь як блок</span>
+  <span class="span-as-block">Я теж span-блок</span>
+
+  <p><strong>div</strong> зі стилем <code>display: inline</code>:</p>
+  <div class="div-as-inline">Я div</div>
+  <div class="div-as-inline">але інлайновий</div>
+  <div class="div-as-inline">і ще один</div>
+</body>
+</html>

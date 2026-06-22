@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset.css</title>
+
+  <link rel="stylesheet" href="reset.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      color: #333;
+      line-height: 1.5;
+    }
+    h1 { color: #2c5282; font-size: 2em; font-weight: bold; margin-bottom: 16px; }
+    h2 { color: #2b6cb0; font-size: 1.4em; font-weight: bold; margin-top: 30px; margin-bottom: 10px; }
+    p { margin-bottom: 12px; }
+    .explanation {
+      background: #fff5f5;
+      border-left: 4px solid #fc8181;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    .demo-box {
+      border: 2px dashed #aaa;
+      padding: 16px;
+      margin: 16px 0;
+      background: #fafafa;
+    }
+    .demo-box ul { list-style: disc; padding-left: 20px; }
+    a.back { display: inline-block; margin-top: 30px; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+  <h1>Скидання стилів — reset.css</h1>
+  <a class="back" href="index.html">← На головну</a>
+
+  <h2>Що таке reset.css?</h2>
+  <div class="explanation">
+    <p>
+      <strong>reset.css</strong> (автор Eric Meyer) — це CSS-файл, який <em>повністю обнуляє</em>
+      всі дефолтні стилі браузера: прибирає відступи, розміри шрифтів, маркери списків,
+      межі таблиць тощо. Після його підключення всі елементи починають виглядати однаково —
+      без жодних стилів. Це «чиста дошка» для верстальника.
+    </p>
+  </div>
+
+  <h2>Що відбулось після підключення reset.css?</h2>
+  <div class="explanation">
+    <p>
+      Після підключення reset.css я помітила, що всі заголовки (<code>h1</code>–<code>h6</code>)
+      стали одного розміру зі звичайним текстом — жодної різниці.
+      Відступи у параграфів і списків зникли. Список <code>&lt;ul&gt;</code> не має маркерів.
+      Кнопка і поле вводу втратили свій «браузерний» вигляд.
+      Щоб сторінка виглядала нормально, мені довелось вручну прописати всі
+      потрібні стилі у власному CSS — це видно нижче.
+      На відміну від <a href="normalize.html">normalize.css</a>, reset не виправляє,
+      а стирає — і ти починаєш з нуля.
+    </p>
+  </div>
+
+  <h2>Демонстрація — БЕЗ скидання (тільки reset.css)</h2>
+  <div class="demo-box" style="all: revert; max-width:100%; padding:16px; border: 2px dashed #aaa; background:#fafafa;">
+    <h1>Заголовок h1 (після reset — такий же розмір як текст)</h1>
+    <h2>Заголовок h2</h2>
+    <p>Параграф без відступів.</p>
+    <ul>
+      <li>Пункт без маркера</li>
+      <li>Пункт без маркера</li>
+    </ul>
+    <button>Кнопка без стилів</button>
+  </div>
+
+  <h2>Демонстрація — З власними стилями поверх reset</h2>
+  <div class="demo-box">
+    <h1>Заголовок h1 (відновлений стилем)</h1>
+    <h2>Заголовок h2</h2>
+    <p>Параграф з відступом знизу.</p>
+    <ul>
+      <li>Пункт з маркером (повернутий вручну)</li>
+      <li>Пункт з маркером</li>
+    </ul>
+    <button style="padding:6px 14px; cursor:pointer;">Кнопка зі стилем</button>
+  </div>
+</body>
+</html>

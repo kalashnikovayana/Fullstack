@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overflow</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 860px;
+      margin: 30px auto;
+      padding: 0 20px;
+      color: #333;
+    }
+    h1 { color: #2c5282; }
+    h2 { color: #2b6cb0; margin-top: 40px; }
+    .explanation {
+      background: #ebf8ff;
+      border-left: 4px solid #4299e1;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    a.back { display: inline-block; margin-top: 30px; color: #2b6cb0; }
+
+    .box {
+      width: 280px;
+      height: 120px;
+      border: 3px solid #4299e1;
+      background: #ebf8ff;
+      padding: 10px;
+      margin: 12px 0;
+    }
+
+    .ov-visible  { overflow: visible; }
+
+    .ov-hidden   { overflow: hidden; }
+
+    .ov-scroll   { overflow: scroll; }
+
+    .ov-auto     { overflow: auto; }
+
+    .ov-x-scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; }
+    .ov-y-scroll { overflow-x: hidden; overflow-y: scroll; }
+
+    .long-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .row { display: flex; gap: 20px; flex-wrap: wrap; }
+    .col { flex: 1; min-width: 240px; }
+    .label { font-size: 13px; color: #555; font-weight: bold; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Властивість overflow</h1>
+  <a class="back" href="index.html">← На головну</a>
+
+  <div class="explanation">
+    <p>
+      <strong>overflow</strong> керує тим, що відбувається з вмістом,
+      який виходить за межі контейнера з фіксованими розмірами.
+      Є чотири основні значення: <code>visible</code>, <code>hidden</code>,
+      <code>scroll</code>, <code>auto</code>.
+    </p>
+  </div>
+
+  <h2>1. overflow: visible (за замовчуванням)</h2>
+  <div class="explanation">
+    Вміст виходить за межі контейнера і перекриває інші елементи.
+    Рамка контейнера залишається на місці.
+  </div>
+  <div class="box ov-visible">
+    <p class="long-text">
+      Це дуже довгий текст, який виходить за межі контейнера.
+      Він продовжує відображатись навіть за межами блоку —
+      overflow: visible не обрізає і не ховає вміст.
+      Бачиш, як він виходить за межі синьої рамки?
+    </p>
+  </div>
+
+  <h2>2. overflow: hidden</h2>
+  <div class="explanation">
+    Вміст, що виходить за межі, обрізається і не видно.
+    Скролбар не з'являється. Часто використовується для «clearfix» і обрізання зображень.
+  </div>
+  <div class="box ov-hidden">
+    <p class="long-text">
+      Це дуже довгий текст, який виходить за межі контейнера.
+      Він продовжує відображатись навіть за межами блоку —
+      але тут overflow: hidden обрізає все, що не вміщується.
+      Ти не побачиш цього тексту.
+    </p>
+  </div>
+
+  <h2>3. overflow: scroll</h2>
+  <div class="explanation">
+    Завжди з'являються смуги прокрутки — навіть якщо вміст вміщується.
+    Можна прокручувати контейнер мишею або за допомогою клавіш.
+  </div>
+  <div class="box ov-scroll">
+    <p class="long-text">
+      Тут є скролбар завжди — навіть якщо вміст коротший за контейнер.
+      overflow: scroll примусово показує смуги прокрутки.
+      Можна прокрутити цей блок вниз, щоб побачити решту тексту.
+      Ось ще текст для демонстрації прокрутки вниз.
+      І ще трохи тексту.
+    </p>
+  </div>
+
+  <h2>4. overflow: auto</h2>
+  <div class="explanation">
+    Смуга прокрутки з'являється <em>лише тоді</em>, коли вміст справді не вміщується.
+    Це найбільш зручний варіант для більшості випадків.
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="label">Вміст перевищує розміри → скрол є:</div>
+      <div class="box ov-auto">
+        <p class="long-text">
+          Багато тексту, який не вміщується у контейнер.
+          Дивись — скролбар з'являється автоматично.
+          Це overflow: auto в дії.
+          Прокрути вниз, щоб побачити решту.
+          Ось ще рядок для прокрутки.
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="label">Вміст вміщується → скролу немає:</div>
+      <div class="box ov-auto">
+        <p class="long-text">Короткий текст.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>5. overflow-x та overflow-y окремо</h2>
+  <div class="explanation">
+    Можна контролювати горизонтальну і вертикальну прокрутку незалежно.
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="label">overflow-x: scroll (горизонтальна):</div>
+      <div class="box ov-x-scroll">
+        <span class="long-text">
+          Дуже довгий рядок тексту без переносу — ось ще текст щоб рядок виходив за межі контейнера вправо.
+        </span>
+      </div>
+    </div>
+    <div class="col">
+      <div class="label">overflow-y: scroll (вертикальна):</div>
+      <div class="box ov-y-scroll">
+        <p class="long-text">
+          Рядок 1<br/>Рядок 2<br/>Рядок 3<br/>Рядок 4<br/>
+          Рядок 5<br/>Рядок 6<br/>Рядок 7<br/>Рядок 8
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Позиціонування елементів</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 860px;
+      margin: 30px auto;
+      padding: 0 20px;
+      color: #333;
+    }
+    h1 { color: #2c5282; }
+    h2 { color: #2b6cb0; margin-top: 50px; }
+    .explanation {
+      background: #ebf8ff;
+      border-left: 4px solid #4299e1;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    a.back { display: inline-block; margin-top: 20px; color: #2b6cb0; }
+
+    .pos-static {
+      position: static;
+      background: #bee3f8;
+      border: 2px solid #4299e1;
+      padding: 10px;
+      margin: 6px 0;
+    }
+
+    .pos-relative-wrapper {
+      position: relative;
+      background: #fefcbf;
+      border: 2px solid #d69e2e;
+      padding: 10px;
+      height: 80px;
+      margin: 6px 0;
+    }
+    .pos-relative {
+      position: relative;
+      top: 15px;
+      left: 30px;
+      background: #f6ad55;
+      border: 2px solid #dd6b20;
+      padding: 6px 12px;
+      display: inline-block;
+    }
+
+    .pos-absolute-wrapper {
+      position: relative;
+      background: #c6f6d5;
+      border: 2px solid #38a169;
+      padding: 10px;
+      height: 120px;
+      margin: 6px 0;
+    }
+    .pos-absolute {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #68d391;
+      border: 2px solid #276749;
+      padding: 6px 14px;
+    }
+
+    .pos-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #e53e3e;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .sticky-section {
+      height: 400px;
+      overflow-y: scroll;
+      border: 2px solid #805ad5;
+      background: #faf5ff;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background: #805ad5;
+      color: white;
+      padding: 10px 16px;
+      font-weight: bold;
+      z-index: 10;
+    }
+    .sticky-section p {
+      padding: 10px 16px;
+      margin: 0;
+      border-bottom: 1px solid #e9d8fd;
+    }
+
+    .compare {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .compare > div {
+      flex: 1;
+      min-width: 300px;
+    }
+    .compare .label {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Позиціонування елементів</h1>
+  <a class="back" href="index.html">← На головну</a>
+
+  <h2>1. position: static (за замовчуванням)</h2>
+  <div class="explanation">
+    Всі елементи за замовчуванням мають <code>position: static</code>.
+    Вони розташовані у нормальному потоці документа.
+    Властивості <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>
+    не мають ефекту.
+  </div>
+  <div class="pos-static">Блок 1 — static</div>
+  <div class="pos-static">Блок 2 — static</div>
+  <div class="pos-static">Блок 3 — static</div>
+
+  <h2>2. position: relative</h2>
+  <div class="explanation">
+    Елемент залишається у потоці документа (місце зарезервоване),
+    але зміщується <em>відносно своєї початкової позиції</em> через
+    <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>.
+    Також служить «прив'язкою» для дочірніх absolute-елементів.
+  </div>
+  <div class="pos-relative-wrapper">
+    Контейнер (жовтий)
+    <span class="pos-relative">
+      Я зміщений: top: 15px, left: 30px
+    </span>
+  </div>
+
+  <h2>3. position: absolute</h2>
+  <div class="explanation">
+    Елемент <em>виривається</em> з потоку документа — його місце не зберігається.
+    Він позиціонується відносно найближчого предка з <code>position</code>
+    (не static). Якщо такого немає — відносно <code>&lt;html&gt;</code>.
+  </div>
+  <div class="pos-absolute-wrapper">
+    <p>Контейнер з <code>position: relative</code> (зелений)</p>
+    <div class="pos-absolute">Я absolute: bottom: 10px, right: 10px</div>
+  </div>
+
+  <h2>4. position: fixed</h2>
+  <div class="explanation">
+    Елемент позиціонується відносно <strong>вікна браузера</strong> (viewport)
+    і <em>не рухається</em> при прокрутці сторінки. Зверни увагу на червону
+    кнопку у правому нижньому куті — вона завжди там, хоч як крути сторінку.
+  </div>
+  <p>Прокрути сторінку вниз — червона кнопка залишиться на місці.</p>
+
+  <h2>5. position: sticky</h2>
+  <div class="explanation">
+    Спочатку поводиться як <code>relative</code>, але коли досягає вказаного порогу
+    при прокрутці (<code>top: 0</code>) — «прилипає» і веде себе як <code>fixed</code>
+    в межах свого контейнера. Ідеально для заголовків таблиць і навігації.
+  </div>
+
+  <div class="compare">
+    <div>
+      <div class="label">Sticky заголовок (прокрути блок):</div>
+      <div class="sticky-section">
+        <div class="sticky-header">Я sticky — залишаюсь вгорі блоку при прокрутці</div>
+        <p>Рядок 1 — прокрути мене вниз</p>
+        <p>Рядок 2</p>
+        <p>Рядок 3</p>
+        <p>Рядок 4</p>
+        <p>Рядок 5</p>
+        <p>Рядок 6</p>
+        <p>Рядок 7</p>
+        <p>Рядок 8</p>
+        <p>Рядок 9</p>
+        <p>Рядок 10</p>
+        <p>Рядок 11</p>
+        <p>Рядок 12</p>
+        <p>Рядок 13</p>
+        <p>Рядок 14</p>
+        <p>Рядок 15</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>6. Різниця між fixed і sticky</h2>
+  <div class="explanation">
+    <table style="border-collapse: collapse; width: 100%;">
+      <tr style="background: #bee3f8;">
+        <th style="padding: 8px; border: 1px solid #4299e1; text-align: left;"></th>
+        <th style="padding: 8px; border: 1px solid #4299e1;">fixed</th>
+        <th style="padding: 8px; border: 1px solid #4299e1;">sticky</th>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;"><strong>Прив'язка</strong></td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Вікно браузера (viewport)</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Батьківський контейнер</td>
+      </tr>
+      <tr style="background: #f7fafc;">
+        <td style="padding: 8px; border: 1px solid #ccc;"><strong>Місце в потоці</strong></td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Не займає (виривається)</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Займає (залишається в потоці)</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ccc;"><strong>Поведінка при скролі</strong></td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Завжди на місці відносно екрану</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">«Прилипає» тільки всередині свого блоку</td>
+      </tr>
+      <tr style="background: #f7fafc;">
+        <td style="padding: 8px; border: 1px solid #ccc;"><strong>Типовий приклад</strong></td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Плаваюча кнопка, чат-бот</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Заголовок таблиці, навігація</td>
+      </tr>
+    </table>
+  </div>
+
+  <button class="pos-fixed">▲ Fixed кнопка</button>
+
+  <div style="height: 600px; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 18px;">
+    ↑ Прокрути вгору, щоб побачити всі приклади
+  </div>
+</body>
+</html>

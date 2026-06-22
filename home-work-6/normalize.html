@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Normalize.css</title>
+
+  <link rel="stylesheet" href="normalize.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      color: #333;
+    }
+    h1 { color: #2c5282; }
+    h2 { color: #2b6cb0; margin-top: 30px; }
+    .explanation {
+      background: #ebf8ff;
+      border-left: 4px solid #4299e1;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    .demo-box {
+      border: 2px dashed #aaa;
+      padding: 16px;
+      margin: 16px 0;
+      background: #fafafa;
+    }
+    a.back { display: inline-block; margin-top: 30px; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+  <h1>Нормалізація стилів — normalize.css</h1>
+  <a class="back" href="index.html">← На головну</a>
+
+  <h2>Що таке normalize.css?</h2>
+  <div class="explanation">
+    <p>
+      <strong>normalize.css</strong> — це невеликий CSS-файл, який вирівнює (нормалізує) стилі
+      між різними браузерами. Він <em>не прибирає</em> всі стилі, а лише виправляє
+      розбіжності: наприклад, у Chrome і Firefox заголовки <code>h1</code>–<code>h6</code>,
+      відступи параграфів або поведінка кнопок можуть трохи відрізнятись.
+      Normalize виправляє ці відмінності, але залишає розумні дефолтні стилі браузера.
+    </p>
+  </div>
+
+  <h2>Що відбулось на цій сторінці після підключення?</h2>
+  <div class="explanation">
+    <p>
+      Я підключила normalize.css і помітила: відступи в <code>&lt;body&gt;</code>
+      більше не залежать від браузера — вони стандартизовані. Шрифт кнопок і полів
+      тепер успадковується від батьківського елемента, а не береться «звідкись».
+      Заголовок <code>&lt;h1&gt;</code> всередині <code>&lt;section&gt;</code>
+      має той самий розмір, що й звичайний <code>&lt;h1&gt;</code>.
+      Загалом сторінка виглядає однаково в різних браузерах, але при цьому
+      <em>збережені</em> базові стилі — наприклад, жирний шрифт для <code>&lt;b&gt;</code>
+      і курсив для <code>&lt;em&gt;</code>.
+    </p>
+  </div>
+
+  <h2>Демонстрація елементів</h2>
+  <div class="demo-box">
+    <h1>Заголовок h1</h1>
+    <h2>Заголовок h2</h2>
+    <p>Звичайний параграф з <strong>жирним</strong>, <em>курсивом</em> та <code>кодом</code>.</p>
+    <ul>
+      <li>Пункт списку 1</li>
+      <li>Пункт списку 2</li>
+    </ul>
+    <button>Кнопка</button>
+    <input type="text" placeholder="Поле вводу" />
+  </div>
+
+  <h2>Порівняння з reset.css</h2>
+  <div class="explanation">
+    <p>
+      На відміну від <a href="reset.html">reset.css</a>, normalize <strong>не обнуляє</strong>
+      всі стилі — він лише виправляє несумісності. Якщо відкрити цю сторінку
+      після <code>reset.css</code>, ви побачите, що тут <code>&lt;ul&gt;</code>
+      має маркери, а заголовки — розмір. Там — все однакового розміру без відступів.
+    </p>
+  </div>
+</body>
+</html>
