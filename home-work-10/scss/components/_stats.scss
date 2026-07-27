@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+
+.stats {
+    background-color: $color-accent;
+    padding: 40px 0;
+
+    @include respond-to('phone-lg') {
+        padding: 32px 0;
+    }
+}
+
+.stats_list {
+    @include flex($justify: space-between, $align: center);
+    @include reset-list;
+
+    @include respond-to('laptop-sm') {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px 32px;
+    }
+}
+
+.stats_item {
+    @include flex($align: center, $gap: 12px);
+    color: $color-text-light;
+
+    @include respond-to('laptop-sm') {
+        flex: 1 1 calc(50% - 32px);
+        justify-content: center;
+    }
+
+    @include respond-to('phone-lg') {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+    }
+
+    @include respond-to('phone-sm') {
+        gap: 8px;
+    }
+}
+
+.stats_icon {
+    width: 40px;
+    height: 40px;
+
+    @include respond-to('phone-sm') {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.stats_text {
+    @include flex(column);
+}
+
+.stats_count {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stats_label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+}

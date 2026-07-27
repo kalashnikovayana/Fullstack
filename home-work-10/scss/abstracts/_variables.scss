@@ -1,0 +1,21 @@
+// Typography
+$font-family: 'Roboto', Arial, sans-serif;
+
+// Colors
+$color-bg: #eeeff1;
+$color-bg-light: #f9f9f9;
+$color-accent: #34547a;
+$color-text: #000000;
+$color-text-muted: #727272;
+$color-text-light: #ffffff;
+
+// Layout
+$container-width: 1120px;
+
+// Breakpoints used by the respond-to() mixin
+$breakpoints: (
+    'laptop-sm': 992px,
+    'tablet': 768px,
+    'phone-lg': 576px,
+    'phone-sm': 375px,
+);

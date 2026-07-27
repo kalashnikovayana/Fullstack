@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use 'variables' as v;
+
+// Media mixin: @include respond-to('tablet') { ... }
+@mixin respond-to($breakpoint) {
+    @if not map.has-key(v.$breakpoints, $breakpoint) {
+        @error 'Unknown breakpoint `#{$breakpoint}`. Available: #{map.keys(v.$breakpoints)}';
+    }
+
+    @media (max-width: map.get(v.$breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+@mixin flex($direction: row, $align: stretch, $justify: flex-start, $gap: null, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+
+    @if $gap {
+        gap: $gap;
+    }
+}
+
+@mixin reset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin button-reset {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+// Shared vertical rhythm for `.about` / `.video` sections
+@mixin section-spacing($base: 100px, $laptop-sm: 72px, $tablet: 56px) {
+    padding: $base 0;
+
+    @include respond-to('laptop-sm') {
+        padding: $laptop-sm 0;
+    }
+
+    @include respond-to('tablet') {
+        padding: $tablet 0;
+    }
+}
