@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <rect width="300" height="400" fill="#b8dcec"/>
+  <circle cx="230" cy="75" r="35" fill="#ffe28a"/>
+  <path d="M0 280 95 120l75 125 42-67 88 122v100H0Z" fill="#668c73"/>
+  <path d="m49 198 46-78 33 55-21-13-13 19-15-13Z" fill="#f5f5f5"/>
+  <path d="M0 310 88 250l56 42 48-32 108 66v74H0Z" fill="#315c3b"/>
+  <text x="20" y="370" fill="#fff" font-family="Arial" font-size="25" font-weight="bold">Карпати</text>
+</svg>

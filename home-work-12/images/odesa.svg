@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <rect width="300" height="220" fill="#bfe5f4"/>
+  <circle cx="225" cy="70" r="40" fill="#ffd35c"/>
+  <path d="M0 215q75-30 150 0t150 0v130H0Z" fill="#3d9fc0"/>
+  <path d="M0 255q75-30 150 0t150 0" fill="none" stroke="#fff" stroke-width="8" opacity=".7"/>
+  <path d="M0 325q100-20 300 0v75H0Z" fill="#e6c887"/>
+  <path d="m85 155 55-30v65Z" fill="#fff"/>
+  <path d="M140 112v120" stroke="#604b3b" stroke-width="5"/>
+  <path d="m145 145 50 20-50 22Z" fill="#f07462"/>
+  <text x="20" y="370" fill="#604b3b" font-family="Arial" font-size="25" font-weight="bold">Одеса</text>
+</svg>

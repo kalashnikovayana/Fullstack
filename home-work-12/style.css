@@ -1,0 +1,9 @@
+.slider-image {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #198754;
+}

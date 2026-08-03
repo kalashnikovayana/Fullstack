@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <rect width="300" height="400" fill="#efb083"/>
+  <circle cx="70" cy="80" r="40" fill="#ffd98c"/>
+  <rect y="260" width="300" height="140" fill="#465f6b"/>
+  <path d="M70 280V165h45v115m-35-115 13-45 13 45m40 115V135h50v145m-40-145 15-55 15 55m35 145V190h40v90" fill="#f0e4ca" stroke="#795b3e" stroke-width="5"/>
+  <circle cx="93" cy="115" r="8" fill="#d9a514"/>
+  <circle cx="181" cy="75" r="8" fill="#d9a514"/>
+  <text x="20" y="370" fill="#fff" font-family="Arial" font-size="25" font-weight="bold">Київ</text>
+</svg>

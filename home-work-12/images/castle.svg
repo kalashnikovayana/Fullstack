@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <rect width="300" height="400" fill="#c9d9df"/>
+  <circle cx="230" cy="65" r="33" fill="#fff3b5"/>
+  <path d="M0 310q70-70 140-25t160-20v135H0Z" fill="#6f9668"/>
+  <path d="M55 300V165h55v135m80 0V150h55v150M100 300V210h100v90" fill="#d1b38c" stroke="#6b5541" stroke-width="5"/>
+  <path d="m50 165 32-50 33 50m70-15 32-50 33 50" fill="#875348" stroke="#6b4038" stroke-width="5"/>
+  <rect x="137" y="245" width="27" height="55" rx="13" fill="#604b3b"/>
+  <text x="20" y="370" fill="#fff" font-family="Arial" font-size="25" font-weight="bold">Замок</text>
+</svg>
