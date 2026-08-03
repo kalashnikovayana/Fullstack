@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>SVG фігури</title>
+</head>
+
+<body>
+    <main class="container">
+        <h1>SVG фігури</h1>
+        <p>Квадрат, прямокутник, коло та еліпс</p>
+
+        <div class="shapes">
+            <div class="shape-block">
+                <svg viewBox="0 0 220 180" role="img" aria-label="Квадрат">
+                    <rect class="shape square" x="50" y="30" width="120" height="120" />
+                </svg>
+                <h2>Квадрат</h2>
+            </div>
+
+            <div class="shape-block">
+                <svg viewBox="0 0 220 180" role="img" aria-label="Прямокутник">
+                    <rect class="shape rectangle" x="30" y="50" width="160" height="80" />
+                </svg>
+                <h2>Прямокутник</h2>
+            </div>
+
+            <div class="shape-block">
+                <svg viewBox="0 0 220 180" role="img" aria-label="Анімоване коло">
+                    <circle class="shape circle animated" cx="110" cy="90" r="60" />
+                </svg>
+                <h2>Коло</h2>
+            </div>
+
+            <div class="shape-block">
+                <svg viewBox="0 0 220 180" role="img" aria-label="Еліпс">
+                    <ellipse class="shape ellipse" cx="110" cy="90" rx="78" ry="48" />
+                </svg>
+                <h2>Еліпс</h2>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
