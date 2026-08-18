@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Product feedback board">
+    <link rel="icon" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>
+      Product Feedback
+    </title>
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <main class="suggestions-shell" id="main">
+      <aside class="sidebar">
+        <div class="brand">
+          <div>
+            <h1>
+              Frontend Mentor
+            </h1>
+            <p>
+              Feedback Board
+            </p>
+          </div>
+        </div>
+        <div class="sidebar-menu" id="sidebar-menu">
+          <nav class="panel filters" aria-label="Categories">
+            <span class="tag active">
+              All
+            </span>
+            <span class="tag">
+              UI
+            </span>
+            <span class="tag">
+              UX
+            </span>
+            <span class="tag">
+              Enhancement
+            </span>
+            <span class="tag">
+              Bug
+            </span>
+            <span class="tag">
+              Feature
+            </span>
+          </nav>
+          <section class="panel roadmap-summary">
+            <div>
+              <h2>
+                Roadmap
+              </h2>
+              <a href="roadmap.html">
+                View
+              </a>
+            </div>
+            <ul>
+              <li class="planned">
+                <span>
+                  Planned
+                </span>
+                <b>
+                  2
+                </b>
+              </li>
+              <li class="in-progress">
+                <span>
+                  In-Progress
+                </span>
+                <b>
+                  3
+                </b>
+              </li>
+              <li class="live">
+                <span>
+                  Live
+                </span>
+                <b>
+                  1
+                </b>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </aside>
+      <section class="suggestions-content">
+        <header class="suggestions-bar">
+          <div class="suggestions-title">
+            <img src="assets/suggestions/icon-suggestions.svg" alt="">
+            <h2>
+              <span id="suggestion-count">
+                6
+              </span>
+              Suggestions
+            </h2>
+          </div>
+          <div class="simple-sort">
+            <span>Sort by:</span>
+            <details class="css-sort">
+              <summary>Most Upvotes</summary>
+              <div class="css-sort__menu">
+                <label><input type="radio" name="sort" checked>Most Upvotes</label>
+                <label><input type="radio" name="sort">Least Upvotes</label>
+                <label><input type="radio" name="sort">Most Comments</label>
+                <label><input type="radio" name="sort">Least Comments</label>
+              </div>
+            </details>
+          </div>
+          <a class="btn btn--purple" href="feedback-new.html">
+            <img src="assets/shared/icon-plus.svg" alt="">
+            Add Feedback
+          </a>
+        </header>
+        <div class="feedback-list">
+          <article class="feedback-card" data-category="enhancement">
+            <button class="vote">
+              <img src="assets/shared/icon-arrow-up.svg" alt="">
+              <b>
+                112
+              </b>
+            </button>
+            <a class="feedback-copy" href="feedback-detail.html">
+              <h3>
+                Add tags for solutions
+              </h3>
+              <p>
+                Easier to search for solutions based on a specific stack.
+              </p>
+              <span class="tag">
+                Enhancement
+              </span>
+            </a>
+            <a class="comment-count" href="feedback-detail.html">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <b>
+                2
+              </b>
+            </a>
+          </article>
+          <article class="feedback-card" data-category="feature">
+            <button class="vote">
+              <img src="assets/shared/icon-arrow-up.svg" alt="">
+              <b>
+                99
+              </b>
+            </button>
+            <a class="feedback-copy" href="feedback-detail.html">
+              <h3>
+                Add a dark theme option
+              </h3>
+              <p>
+                It would help people with light sensitivities and who prefer dark mode.
+              </p>
+              <span class="tag">
+                Feature
+              </span>
+            </a>
+            <a class="comment-count" href="feedback-detail.html">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <b>
+                4
+              </b>
+            </a>
+          </article>
+          <article class="feedback-card" data-category="feature">
+            <button class="vote">
+              <img src="assets/shared/icon-arrow-up.svg" alt="">
+              <b>
+                65
+              </b>
+            </button>
+            <a class="feedback-copy" href="feedback-detail.html">
+              <h3>
+                Q&amp;A within the challenge hubs
+              </h3>
+              <p>
+                Challenge-specific Q&amp;A would make for easy reference.
+              </p>
+              <span class="tag">
+                Feature
+              </span>
+            </a>
+            <span class="comment-count">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <b>
+                1
+              </b>
+            </span>
+          </article>
+          <article class="feedback-card" data-category="enhancement">
+            <button class="vote">
+              <img src="assets/shared/icon-arrow-up.svg" alt="">
+              <b>
+                51
+              </b>
+            </button>
+            <a class="feedback-copy" href="feedback-detail.html">
+              <h3>
+                Add image/video upload to feedback
+              </h3>
+              <p>
+                Images and screencasts can enhance comments on solutions.
+              </p>
+              <span class="tag">
+                Enhancement
+              </span>
+            </a>
+            <span class="comment-count">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <b>
+                2
+              </b>
+            </span>
+          </article>
+          <article class="feedback-card" data-category="feature">
+            <button class="vote">
+              <img src="assets/shared/icon-arrow-up.svg" alt="">
+              <b>
+                42
+              </b>
+            </button>
+            <a class="feedback-copy" href="feedback-detail.html">
+              <h3>
+                Ability to follow others
+              </h3>
+              <p>
+                Stay updated on comments and solutions other people post.
+              </p>
+              <span class="tag">
+                Feature
+              </span>
+            </a>
+            <span class="comment-count">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <b>
+                3
+              </b>
+            </span>
+          </article>
+          <article class="feedback-card" data-category="bug">
+            <button class="vote">
+              <img src="assets/shared/icon-arrow-up.svg" alt="">
+              <b>
+                3
+              </b>
+            </button>
+            <a class="feedback-copy" href="feedback-detail.html">
+              <h3>
+                Preview images not loading
+              </h3>
+              <p>
+                Challenge preview images are missing when you apply a filter.
+              </p>
+              <span class="tag">
+                Bug
+              </span>
+            </a>
+            <span class="comment-count">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <b>
+                0
+              </b>
+            </span>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

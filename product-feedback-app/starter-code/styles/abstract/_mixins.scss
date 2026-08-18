@@ -1,0 +1,14 @@
+@mixin button($color) {
+  background: $color;
+  color: $white;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+
+@mixin card {
+  padding: 24px;
+  border-radius: 10px;
+  background: $white;
+}

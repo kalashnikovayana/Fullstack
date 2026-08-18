@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>
+      Edit Feedback
+    </title>
+  </head>
+  <body>
+    <main class="form-page" id="main">
+      <a class="back-link" href="feedback-detail.html">
+        <img src="assets/shared/icon-arrow-left.svg" alt="">
+        Go Back
+      </a>
+      <form class="feedback-form">
+        <img class="form-icon" src="assets/shared/icon-edit-feedback.svg" alt="">
+        <h1>
+          Editing ‘Add a dark theme option’
+        </h1>
+        <label>
+          Feedback Title
+          <small>
+            Add a short, descriptive headline
+          </small>
+          <input value="Add a dark theme option" required>
+          <span class="field-error">Can't be empty</span>
+        </label>
+        <div class="form-field">
+          Category
+          <small>
+            Choose a category for your feedback
+          </small>
+          <details class="css-select">
+            <summary>Feature</summary>
+            <div class="css-select__menu">
+              <label><input type="radio" name="category" checked>Feature</label>
+              <label><input type="radio" name="category">UI</label>
+              <label><input type="radio" name="category">UX</label>
+              <label><input type="radio" name="category">Enhancement</label>
+              <label><input type="radio" name="category">Bug</label>
+            </div>
+          </details>
+        </div>
+        <div class="form-field">
+          Update Status
+          <small>
+            Change feature state
+          </small>
+          <details class="css-select">
+            <summary>Suggestion</summary>
+            <div class="css-select__menu">
+              <label><input type="radio" name="status" checked>Suggestion</label>
+              <label><input type="radio" name="status">Planned</label>
+              <label><input type="radio" name="status">In-Progress</label>
+              <label><input type="radio" name="status">Live</label>
+            </div>
+          </details>
+        </div>
+        <label>
+          Feedback Detail
+          <small>
+            Include any specific comments on what should be improved, added, etc.
+          </small>
+          <textarea required>
+            It would help people with light sensitivities and who prefer dark mode.
+          </textarea>
+          <span class="field-error">Can't be empty</span>
+        </label>
+        <div class="form-actions">
+          <button type="button" class="btn btn--red">
+            Delete
+          </button>
+          <a class="btn btn--dark" href="feedback-detail.html">
+            Cancel
+          </a>
+          <button class="btn btn--purple">
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
