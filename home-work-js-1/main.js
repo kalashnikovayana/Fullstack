@@ -12,14 +12,23 @@ console.log('JS #1. Домашнє завдання. Основи JavaScript: П
 // ім'я змінної: myArr, значення: 1, 2, 3, 4, 5
 // ім'я змінної: myObj, значення: first: 'First Name', last: 'Last Name'
 
+const myNum = 10;
+const myStr = "some string";
+const myBool = true;
+const myArr = [1, 2, 3, 4, 5];
+const myObj = {first: "First Name", last: "Last Name"}
+
 /*
  * #2
  *
  * Відформатуйте ціле число, яке зберігається в змінній myNum, щоб отримати результат з 2 знаками після коми.
  * Результат збережіть у змінній decimal2.
  */
-
 // decimal2
+
+const decimal2 = myNum.toFixed(2);
+
+console.log(decimal2)
 
 /*
  * #3
@@ -29,3 +38,8 @@ console.log('JS #1. Домашнє завдання. Основи JavaScript: П
  */
 
 // myBigInt
+
+let myBigInt = 123n;
+myBigInt += 1n
+
+console.log(myBigInt)
