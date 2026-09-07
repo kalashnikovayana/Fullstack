@@ -117,8 +117,8 @@ function Hero({ layout, selection, openBooking }){
       <div className="wrap hero-grid">
         <div className="hero-copy">
           <span className="eyebrow">салон краси · Київ, Поділ</span>
-          <h1 className="display">Краса, що звучить у <em>гармонії</em> з вами</h1>
-          <p className="lead">Стрижка, колір, нігті та догляд від майстрів, яким довіряють. Оберіть послугу й час — решту зробимо ми.</p>
+          <h1 className="display"><span>Салон краси</span><br/><em>у Києві</em></h1>
+          <p className="lead">Краса, що звучить у гармонії з вами. Стрижка, колір, нігті та догляд від майстрів, яким довіряють.</p>
           <div className="hero-cta">
             <button className="btn btn-primary" onClick={()=>openBooking(0)}>Записатися онлайн <Icon name="arrow"/></button>
             <a className="btn btn-outline" href="#services">Переглянути послуги</a>
@@ -135,6 +135,7 @@ function Hero({ layout, selection, openBooking }){
           <div className="hero-badge">
             <div><div className="stars">★★★★★</div><div style={{fontSize:13,fontWeight:700,marginTop:2}}>4.9 з 5 · 2 300 відгуків</div></div>
           </div>
+          <div className="hero-stamp"><Icon name="sparkle"/><span>Твій простір<br/>краси й турботи</span></div>
         </div>
         {layout==="stacked" && <div style={{gridColumn:"1 / -1"}}><BookingWidget selection={selection} openBooking={openBooking}/></div>}
       </div>

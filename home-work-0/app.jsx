@@ -6,9 +6,38 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "intensity": "Сміливі",
   "base": "Крем",
   "hero": "Поруч",
-  "font": "DM Serif Display",
+  "font": "Open Sans",
   "sticky": true
 }/*EDITMODE-END*/;
+
+function usePageAnimations(ready){
+  useEffect(()=>{
+    if(!ready) return;
+    const sections = Array.from(document.querySelectorAll(".hero, .section"));
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const itemSelector = ".hero-copy, .hero-art, .booking-widget, .sec-head, .filter-row, .service-card, .master-card, .gallery-grid image-slot, .review-card, .blog-card, .contact-info, .map";
+
+    sections.forEach(section=>{
+      const items = Array.from(section.querySelectorAll(itemSelector));
+      items.forEach((item,index)=>{
+        item.classList.add("reveal-item");
+        item.style.setProperty("--reveal-delay", `${index * 120}ms`);
+        if(reduced) item.classList.add("is-visible");
+      });
+    });
+    if(reduced) return;
+
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.querySelectorAll(".reveal-item").forEach(item=>item.classList.add("is-visible"));
+        observer.unobserve(entry.target);
+      });
+    },{threshold:.15});
+    sections.forEach(section=>observer.observe(section));
+    return ()=>observer.disconnect();
+  },[ready]);
+}
 
 function App(){
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
@@ -16,6 +45,7 @@ function App(){
   const [open, setOpen] = useStateA(false);
   const [step, setStep] = useStateA(0);
   const [scrolled, setScrolled] = useStateA(false);
+  usePageAnimations(true);
 
   const openBooking = (s=0, p=null) => {
     if(p) setSelection(prev=>({...prev,...p}));
@@ -67,7 +97,7 @@ function App(){
         <TweakSection label="Стиль"/>
         <TweakRadio label="Кольори тріади" value={t.intensity} options={["Сміливі","М'які"]} onChange={v=>setTweak("intensity",v)}/>
         <TweakRadio label="Тло" value={t.base} options={["Крем","Білий"]} onChange={v=>setTweak("base",v)}/>
-        <TweakSelect label="Шрифт заголовків" value={t.font} options={["DM Serif Display","Cormorant Garamond","Playfair Display"]} onChange={v=>setTweak("font",v)}/>
+        <TweakSelect label="Шрифт заголовків" value={t.font} options={["Open Sans","DM Serif Display","Cormorant Garamond","Playfair Display"]} onChange={v=>setTweak("font",v)}/>
         <TweakSection label="Розкладка"/>
         <TweakRadio label="Віджет запису" value={t.hero} options={["Поруч","Під текстом"]} onChange={v=>setTweak("hero",v)}/>
         <TweakToggle label="Липка панель запису" value={t.sticky} onChange={v=>setTweak("sticky",v)}/>
