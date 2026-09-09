@@ -1,0 +1,44 @@
+---
+import Icon from "./Icon.astro";
+import { HERO_IMG, PHOTO_SIZE } from "../images.js";
+---
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">салон краси · Київ, Поділ</span>
+      <h1 class="display"><span>Салон краси</span><br /><em>у Києві</em></h1>
+      <p class="lead">
+        Краса, що звучить у гармонії з вами. Стрижка, колір, нігті та догляд від майстрів, яким довіряють.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" type="button" data-open-booking data-step="0">
+          Записатися онлайн <Icon name="arrow" />
+        </button>
+        <a class="btn btn-outline" href="#services">Переглянути послуги</a>
+      </div>
+      <div class="hero-meta">
+        <div><div class="num display">12</div><div class="lbl">років досвіду</div></div>
+        <div><div class="num display">4.9★</div><div class="lbl">середній рейтинг</div></div>
+        <div><div class="num display">3 100+</div><div class="lbl">щасливих клієнтів</div></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-blob"></div>
+      <img
+        src={HERO_IMG}
+        width={PHOTO_SIZE.width}
+        height={PHOTO_SIZE.height}
+        loading="lazy"
+        alt="Інтер'єр салону Harmony"
+      />
+      <div class="hero-badge">
+        <div>
+          <div class="stars">★★★★★</div>
+          <div style="font-size:13px;font-weight:700;margin-top:2px;">4.9 з 5 · 640 відгуків</div>
+        </div>
+      </div>
+      <div class="hero-stamp"><Icon name="sparkle" /><span>Твій простір<br />краси й турботи</span></div>
+    </div>
+  </div>
+</section>

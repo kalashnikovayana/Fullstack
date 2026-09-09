@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+
+const address = "вул. Сагайдачного 18, Київ";
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+---
+
+<section class="section" id="contacts" style="background:var(--teal-tint)">
+  <div class="wrap">
+    <div class="contacts-grid">
+      <div class="contact-info">
+        <div class="sec-head" style="margin-bottom:6px">
+          <span class="eyebrow">завітайте</span>
+          <h2 class="display">Контакти</h2>
+        </div>
+        <div class="contact-row"><div class="ic"><Icon name="pin" /></div><div><div class="k">Адреса</div><div class="v">вул. Сагайдачного 18, Київ</div></div></div>
+        <div class="contact-row"><div class="ic"><Icon name="clock" /></div><div><div class="k">Графік</div><div class="v">Пн–Нд · 09:00 – 21:00</div></div></div>
+        <div class="contact-row"><div class="ic"><Icon name="phone" /></div><div><div class="k">Телефон</div><div class="v">+38 097 123 45 67</div></div></div>
+        <div class="contact-row"><div class="ic"><Icon name="mail" /></div><div><div class="k">Пошта</div><div class="v">hello@harmony.salon</div></div></div>
+        <button
+          class="btn btn-primary"
+          type="button"
+          style="align-self:flex-start;margin-top:6px"
+          data-open-booking
+          data-step="0"
+        >
+          Записатися онлайн <Icon name="arrow" />
+        </button>
+      </div>
+      <div class="map">
+        <iframe
+          src={mapSrc}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Harmony на карті — вул. Сагайдачного 18, Київ"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>

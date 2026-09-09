@@ -1,0 +1,23 @@
+---
+import Icon from "./Icon.astro";
+
+const links = ["Послуги", "Майстри", "Галерея", "Відгуки", "Журнал", "Контакти"];
+const ids = ["services", "masters", "gallery", "reviews", "blog", "contacts"];
+---
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">Harmony<span class="dot"></span></a>
+
+    <nav class="nav-links">
+      {links.map((l, i) => <a href={"#" + ids[i]}>{l}</a>)}
+    </nav>
+
+    <div class="nav-right">
+      <span class="nav-phone"><Icon name="phone" />+38 097 123 45 67</span>
+      <button class="btn btn-primary btn-sm" type="button" data-open-booking data-step="0">
+        Записатися
+      </button>
+    </div>
+  </div>
+</header>

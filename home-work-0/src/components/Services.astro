@@ -1,0 +1,78 @@
+---
+import Icon from "./Icon.astro";
+import { HARMONY_DATA } from "../data.js";
+import { SERVICE_IMG, SERVICE_ICON, SERVICE_TINT, PHOTO_SIZE } from "../images.js";
+
+const tints = ["rose", "gold", "teal"];
+---
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">що ми робимо</span>
+      <h2 class="display">Послуги та ціни</h2>
+      <p>Повний спектр б'юті-послуг під одним дахом. Оберіть категорію — і одразу записуйтеся до майстра.</p>
+    </div>
+
+    <div class="filter-row" id="services-filter">
+      {HARMONY_DATA.cats.map((c) => (
+        <button type="button" class={"chip" + (c === "Всі" ? " active" : "")} data-cat={c}>
+          {c}
+        </button>
+      ))}
+    </div>
+
+    <div class="services-grid" id="services-grid">
+      {HARMONY_DATA.services.map((s, i) => (
+        <article class="service-card" data-cat={s.cat}>
+          {SERVICE_IMG[s.id] ? (
+            <img
+              src={SERVICE_IMG[s.id]}
+              width={PHOTO_SIZE.width}
+              height={PHOTO_SIZE.height}
+              loading="lazy"
+              alt={s.name}
+            />
+          ) : (
+            <div class={"icon-tile " + SERVICE_TINT[s.id]} role="img" aria-label={s.name}>
+              <Icon name={SERVICE_ICON[s.id]} />
+            </div>
+          )}
+          <div class="sc-body">
+            <span class={"tag " + tints[i % 3]}>{s.cat} · {s.dur}</span>
+            <h3 class="display">{s.name}</h3>
+            <p>{s.desc}</p>
+            <div class="sc-foot">
+              <span class="price display">{s.price} ₴ <small>{s.unit}</small></span>
+              <button class="btn btn-dark btn-sm" type="button" data-open-booking data-step="1" data-service={s.id}>
+                Записатись
+              </button>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const filterRow = document.getElementById("services-filter");
+  const grid = document.getElementById("services-grid");
+
+  if (filterRow && grid) {
+    const cards = Array.from(grid.querySelectorAll(".service-card"));
+
+    filterRow.addEventListener("click", (event) => {
+      const chip = event.target.closest("[data-cat]");
+      if (!chip) return;
+
+      filterRow.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+
+      const cat = chip.dataset.cat;
+      cards.forEach((card) => {
+        card.hidden = cat !== "Всі" && card.dataset.cat !== cat;
+      });
+    });
+  }
+</script>

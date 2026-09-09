@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = Astro.url;
+const ogImage = new URL("/images/m-olha.png", Astro.url);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  name: "Harmony",
+  description: "Салон краси на Подолі. Стрижка, фарбування, манікюр, догляд за обличчям та SPA.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "вул. Сагайдачного 18",
+    addressLocality: "Київ",
+    addressCountry: "UA",
+  },
+  telephone: "+380971234567",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
+    ],
+    opens: "09:00",
+    closes: "21:00",
+  },
+};
+---
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <link rel="stylesheet" href="/harmony.css?v=5" />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      // Bridges static "Записатись" buttons (no React here) to the
+      // BookingDriver island. See migration plan: one delegated click
+      // listener dispatches a CustomEvent; the island (once mounted)
+      // listens for it and opens itself on the right step with the
+      // right service/master preselected. Clicks that happen before the
+      // island hydrates are queued and flushed on mount.
+      window.__harmonyBookingQueue = window.__harmonyBookingQueue || [];
+      window.__harmonyBookingReady = false;
+
+      document.addEventListener("click", (event) => {
+        const trigger = event.target.closest("[data-open-booking]");
+        if (!trigger) return;
+
+        const detail = {
+          step: Number(trigger.dataset.step ?? 0),
+          serviceId: trigger.dataset.service || null,
+          masterId: trigger.dataset.master || null,
+        };
+
+        if (window.__harmonyBookingReady) {
+          window.dispatchEvent(new CustomEvent("harmony:open-booking", { detail }));
+        } else {
+          window.__harmonyBookingQueue.push(detail);
+        }
+      });
+    </script>
+  </body>
+</html>

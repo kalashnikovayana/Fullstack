@@ -1,0 +1,38 @@
+---
+import Icon from "./Icon.astro";
+import { HARMONY_DATA } from "../data.js";
+import { BLOG_IMG, PHOTO_SIZE } from "../images.js";
+
+const tints = ["rose", "gold", "teal"];
+---
+
+<section class="section" id="blog">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="row-between">
+        <div>
+          <span class="eyebrow">журнал</span>
+          <h2 class="display">Поради та натхнення</h2>
+        </div>
+        <a class="btn btn-ghost" href="#blog">Усі статті <Icon name="arrow" /></a>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      {HARMONY_DATA.posts.map((p, i) => (
+        <article class="blog-card">
+          <img
+            src={BLOG_IMG[p.img]}
+            width={PHOTO_SIZE.width}
+            height={PHOTO_SIZE.height}
+            loading="lazy"
+            alt={p.title}
+          />
+          <span class={"tag " + tints[i % 3]} style="align-self:flex-start">{p.tag}</span>
+          <h3 class="display">{p.title}</h3>
+          <div class="meta">{p.read} читання</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

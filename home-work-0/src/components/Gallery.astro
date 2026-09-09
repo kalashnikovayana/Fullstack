@@ -1,0 +1,26 @@
+---
+import { GALLERY, PHOTO_SIZE } from "../images.js";
+---
+
+<section class="section gallery-band" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">портфоліо</span>
+      <h2 class="display">Галерея робіт</h2>
+      <p>Реальні «до / після» наших майстрів.</p>
+    </div>
+
+    <div class="gallery-grid">
+      {GALLERY.map((g) => (
+        <img
+          class={g.cls || ""}
+          src={g.src}
+          width={PHOTO_SIZE.width}
+          height={PHOTO_SIZE.height}
+          loading="lazy"
+          alt="Фото роботи Harmony"
+        />
+      ))}
+    </div>
+  </div>
+</section>

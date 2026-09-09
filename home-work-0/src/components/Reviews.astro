@@ -1,0 +1,30 @@
+---
+import { HARMONY_DATA } from "../data.js";
+import { reviewTint } from "../images.js";
+
+function initial(name) {
+  return name.trim().charAt(0).toUpperCase();
+}
+---
+
+<section class="section reviews-band" id="reviews">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">відгуки</span>
+      <h2 class="display">Що кажуть клієнти</h2>
+    </div>
+
+    <div class="reviews-grid">
+      {HARMONY_DATA.reviews.map((r, i) => (
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote display">«{r.quote}»</div>
+          <div class="who">
+            <div class={"review-avatar " + reviewTint(i)} aria-hidden="true">{initial(r.name)}</div>
+            <div><div class="n">{r.name}</div><div class="s">{r.since}</div></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+import { HARMONY_DATA } from "../data.js";
+import { MASTER_IMG, PHOTO_SIZE } from "../images.js";
+---
+
+<section class="section tight" id="masters" style="background:var(--gold-tint)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">наша команда</span>
+      <h2 class="display">Майстри, яким довіряють</h2>
+      <p>Кожен — сертифікований професіонал зі своїм почерком. Оберіть улюбленого або довіртесь нашій рекомендації.</p>
+    </div>
+
+    <div class="masters-grid">
+      {HARMONY_DATA.masters.map((m) => (
+        <div class="master-card">
+          <img
+            src={MASTER_IMG[m.id]}
+            width={PHOTO_SIZE.width}
+            height={PHOTO_SIZE.height}
+            loading="lazy"
+            alt={m.name}
+          />
+          <div class="m-name display">{m.name}</div>
+          <div class="m-role">{m.role}</div>
+          <div class="m-stars">★★★★★</div>
+          <button
+            class="btn btn-outline btn-sm"
+            type="button"
+            style="margin-top:14px"
+            data-open-booking
+            data-step="0"
+            data-master={m.id}
+          >
+            Записатись до майстра
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

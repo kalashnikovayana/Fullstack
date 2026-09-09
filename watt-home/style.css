@@ -1,0 +1,80 @@
+:root {
+    --paper: #F4F0E8;
+    --ink: #14110E;
+    --ember: #5B1E24;
+    --ember-hover: #7A2A33;
+    --dusk: #08230C;
+    --rose-quiet: #C07A84;
+    --mist: #EFE7E3;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    background: var(--paper);
+    color: var(--ink);
+    padding: .75rem 1.25rem;
+    border-radius: 9999px;
+    font-size: .875rem;
+    font-weight: 500;
+    transition: top .2s ease;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--ember);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Hero — full-bleed photo with a dusk scrim for text contrast */
+.hero-window {
+    position: relative;
+    background: var(--dusk);
+}
+
+.hero-scrim {
+    background: linear-gradient(to top,
+            rgba(8, 35, 12, .92) 0%,
+            rgba(8, 35, 12, .74) 45%,
+            rgba(8, 35, 12, .34) 100%);
+    pointer-events: none;
+}
+
+/* Testimonial carousel */
+.testimonial-track {
+    display: flex;
+    transition: transform .5s ease;
+}
+
+.testimonial-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.testimonial-dot[aria-current="true"] {
+    background: var(--ember);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
