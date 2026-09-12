@@ -698,14 +698,29 @@ body{font-size:14px;background:#fff;}
   .nav .btn{padding:10px 13px;border-radius:3px;}
   html,body,.app,.hero,.hero-grid,.hero-copy{width:100%;max-width:100%;overflow-x:hidden;}
   .nav-inner{width:100%;max-width:100%;justify-content:space-between;gap:10px;overflow:hidden;}
-  .nav-right{display:none;}
+  .nav-right{display:flex;margin-left:auto;}
+  .nav-phone{display:none;}
+  .nav .btn{display:inline-flex;flex:0 0 auto;min-width:58px;padding:9px 10px;font-size:0;}
+  .nav .btn::after{content:"Запис";font-size:9px;letter-spacing:.1em;}
+  .nav .logo{flex:0 0 auto;white-space:nowrap;}
   .hero-grid{grid-template-columns:minmax(0,1fr);}
-  .hero-copy{min-width:0;padding:132px 20px 56px;}
-  .hero .lead{width:100%;max-width:100%;overflow-wrap:anywhere;}
-  .hero-cta{display:grid;grid-template-columns:minmax(0,1fr);width:auto;max-width:100%;}
-  .hero-cta .btn{width:100%;white-space:normal;}
+  .hero-copy{min-width:0;padding:96px 20px 28px;justify-content:flex-start;}
+  .hero h1{font-size:clamp(48px,14vw,60px);line-height:.82;margin-top:16px;}
+  .hero h1 em{margin-left:3%;}
+  .hero .lead{width:100%;max-width:360px;overflow-wrap:normal;}
+  .hero .lead{margin-top:22px;font-size:13px;line-height:1.55;}
+  .hero-cta{display:grid;grid-template-columns:minmax(0,1fr);width:auto;max-width:100%;gap:6px;margin-top:20px;}
+  .hero-cta .btn{width:100%;min-height:46px;white-space:normal;}
+  .hero-cta .btn-outline{min-height:38px;border:0;border-bottom:1px solid var(--border);padding:8px 4px;background:transparent;font-size:9px;}
+  .hero-meta{margin-top:20px;padding-top:16px;}
   .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
-  .hero-meta .num{font-size:22px;}
+  .hero-meta .num{font-size:20px;}
   .hero-meta .lbl{font-size:8px;line-height:1.35;}
   .hero-stamp{right:8px;}
+  .hero-art,.hero-art img{height:370px;min-height:370px;}
+  .hero-art{margin:0 8px 8px;border-radius:16px;}
+  .hero-stamp{width:88px;height:88px;top:14px;font-size:7px;}
+  .hero-badge{left:12px;bottom:12px;padding:10px 14px;}
+  .hero-badge .stars{font-size:11px;}
+  .hero-badge div[style]{font-size:10px!important;}
 }
