@@ -8,6 +8,18 @@
     --mist: #EFE7E3;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* Skip link */
 .skip-link {
     position: absolute;
@@ -40,14 +52,77 @@ select:focus-visible {
 /* Hero — full-bleed photo with a dusk scrim for text contrast */
 .hero-window {
     position: relative;
-    background: var(--dusk);
+    background: #171717;
+}
+
+.hero-image {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center bottom;
+    transform: scale(1.42);
+    transform-origin: center bottom;
+}
+
+@media (max-width: 767px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero-window > .absolute.z-10 > div,
+    .hero-window .grid,
+    .hero-window .grid > div {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .hero-window {
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+    }
+
+    main > section:first-child {
+        width: 100vw;
+        max-width: 100vw;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .hero-window > .absolute.z-10 > div {
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    header > div {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .hero-window h1 {
+        max-width: 100%;
+        font-size: 2.35rem;
+        line-height: .98;
+        overflow-wrap: normal;
+    }
+
+    .hero-image {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-position: center bottom;
+        transform: scale(1.52);
+        transform-origin: center bottom;
+    }
 }
 
 .hero-scrim {
     background: linear-gradient(to top,
-            rgba(8, 35, 12, .92) 0%,
-            rgba(8, 35, 12, .74) 45%,
-            rgba(8, 35, 12, .34) 100%);
+            rgba(0, 0, 0, .58) 0%,
+            rgba(0, 0, 0, .25) 48%,
+            rgba(0, 0, 0, .04) 100%);
     pointer-events: none;
 }
 
