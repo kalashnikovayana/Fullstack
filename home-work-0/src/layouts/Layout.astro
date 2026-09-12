@@ -6,7 +6,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonicalURL = Astro.url;
-const ogImage = new URL("/images/m-olha.png", Astro.url);
+const ogImage = new URL("/images/a-model-in-summery-clothes.jpg", Astro.url);
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -49,7 +49,7 @@ const jsonLd = {
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <link rel="stylesheet" href="/harmony.css?v=5" />
+    <link rel="stylesheet" href="/harmony.css?v=9" />
   </head>
   <body>
     <slot />
