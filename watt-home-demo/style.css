@@ -1,11 +1,11 @@
 :root {
-    --paper: #F4F0E8;
+    --paper: #F3F3F1;
     --ink: #14110E;
     --ember: #5B1E24;
     --ember-hover: #7A2A33;
     --dusk: #08230C;
     --rose-quiet: #C07A84;
-    --mist: #EFE7E3;
+    --mist: #FAFAF8;
 }
 
 *,
@@ -152,4 +152,12 @@ select:focus-visible {
         transition-duration: .001ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* Wordmark: wide geometric face, logo only */
+.brand-logo {
+    font-family: "Unbounded", "Arial Black", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1;
 }
