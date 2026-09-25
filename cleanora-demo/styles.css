@@ -50,3 +50,5 @@ dialog::backdrop{background:rgba(21,7,2,.6)}
   .switch-track i,.photo-window img,.button,.underlined,.site-header nav a::after{transition:none}
   .photo-window:hover img,.button:active{transform:none}
 }
+/* Wordmark: soft humanist face, logo only */
+.logo{font-family:"Tenor Sans",var(--sans);font-weight:400;letter-spacing:.2em;margin-right:-.2em}
