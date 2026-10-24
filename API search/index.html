@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Show Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Пошук серіалів</h1>
+
+    <input
+      type="search"
+      id="search"
+      class="search"
+      placeholder="Почни вводити назву, наприклад: friends"
+      autocomplete="off"
+    >
+
+    <p id="status" class="status" aria-live="polite"></p>
+
+    <ul id="results" class="results"></ul>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
