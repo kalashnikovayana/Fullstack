@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин – Продукти</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Mini<span>Shop.</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link nav__link--active">Продукти</a>
+      <a href="cart.html" class="nav__link">
+        Кошик <span class="badge" data-cart-count>0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Продукти</h1>
+    <p class="page-description">Знайдіть те, що вам подобається. Переглядайте наш асортимент, обирайте улюблені товари та додавайте їх до кошика.</p>
+
+    <form class="filters" id="filters" autocomplete="off">
+      <label class="filter-field">Пошук
+        <input type="search" name="search" class="input" placeholder="Введіть назву товару" />
+      </label>
+
+      <label class="filter-field">Категорія
+      <select name="category" class="input">
+        <option value="all">Усі категорії</option>
+      </select>
+      </label>
+
+      <label class="filter-field">Сортування
+      <select name="sort" class="input">
+        <option value="default">Без сортування</option>
+        <option value="price-asc">Ціна: за зростанням</option>
+        <option value="price-desc">Ціна: за спаданням</option>
+        <option value="title-asc">Назва: А → Я</option>
+        <option value="rating-desc">Рейтинг: спочатку кращі</option>
+      </select>
+      </label>
+
+      <button type="reset" class="btn btn--ghost">Скинути</button>
+    </form>
+
+    <p class="results-info" id="results-info"></p>
+    <div class="grid" id="products"></div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

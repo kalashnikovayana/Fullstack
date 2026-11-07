@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин – Кошик</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Mini<span>Shop.</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Продукти</a>
+      <a href="cart.html" class="nav__link nav__link--active">
+        Кошик <span class="badge" data-cart-count>0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Кошик</h1>
+
+    <div class="cart-layout">
+      <div id="cart-items" class="cart-items">
+        <p class="empty-state">Ваш кошик порожній. <a href="index.html">Перейти до продуктів</a></p>
+      </div>
+
+      <aside class="cart-summary">
+        <h2>Разом</h2>
+        <p class="cart-total">До сплати: <strong id="cart-total">0 ₴</strong></p>
+        <button type="button" class="btn" id="checkout" disabled>Оформити замовлення</button>
+        <button type="button" class="btn btn--ghost" id="clear-cart" disabled>Очистити кошик</button>
+      </aside>
+    </div>
+  </main>
+
+  <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+    <form id="checkout-form" class="checkout-form">
+      <h2 id="checkout-title">Оформлення замовлення</h2>
+      <p>Навчальне замовлення — без оплати та відправлення.</p>
+      <label class="filter-field">Ім’я
+        <input class="input" name="name" autocomplete="name" required pattern=".*\S.*" />
+      </label>
+      <label class="filter-field">Телефон
+        <input class="input" type="tel" name="phone" autocomplete="tel" required
+          pattern="\+?[0-9\s()\-]{10,20}" title="Введіть номер телефону: від 10 до 20 символів" />
+      </label>
+      <label class="filter-field">Адреса доставки
+        <input class="input" name="address" autocomplete="street-address" required pattern=".*\S.*" />
+      </label>
+      <p class="cart-total">До сплати: <strong id="checkout-total"></strong></p>
+      <button class="btn" type="submit">Підтвердити замовлення</button>
+      <button class="btn btn--ghost" type="button" id="cancel-checkout">Скасувати</button>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="/src/card.js"></script>
+</body>
+
+</html>
