@@ -1,0 +1,17 @@
+.menu {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.menu__title {
+  margin: 0 0 32px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
