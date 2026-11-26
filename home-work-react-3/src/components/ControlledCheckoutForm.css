@@ -1,0 +1,30 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkout__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.checkout__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.checkout__input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-beige);
+}
+
+.checkout__total {
+  margin: 0;
+  font-size: 16px;
+}

@@ -1,0 +1,16 @@
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.menu__skeleton {
+  width: 220px;
+  height: 320px;
+  background-color: var(--color-light);
+}
+
+.menu__more {
+  margin-top: 40px;
+  text-align: center;
+}

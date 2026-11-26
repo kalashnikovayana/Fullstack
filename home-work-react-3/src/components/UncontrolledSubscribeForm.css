@@ -1,0 +1,44 @@
+.subscribe {
+  margin-top: 60px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--color-dark);
+}
+
+.subscribe__title {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.subscribe__text {
+  margin: 0 0 24px;
+  font-size: 14px;
+  color: var(--color-beige);
+}
+
+.subscribe__form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.subscribe__input {
+  width: 260px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--color-dark);
+  border: none;
+}
+
+/* На темному фоні кнопка має світлу рамку */
+.subscribe .button--dark {
+  border-color: #fff;
+}
+
+.subscribe__success {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: var(--color-beige);
+}

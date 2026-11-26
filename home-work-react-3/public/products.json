@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Ristretto Bianco", "category": "hot", "price": 5.0, "oldPrice": 6.0, "isDiscount": true, "isOutOfStock": false },
+  { "id": 2, "name": "Iced Creamy Latte", "category": "cold", "price": 5.5, "oldPrice": 6.5, "isDiscount": true, "isOutOfStock": false },
+  { "id": 3, "name": "Cappuccino", "category": "hot", "price": 4.0, "oldPrice": 5.0, "isDiscount": true, "isOutOfStock": false },
+  { "id": 4, "name": "Iced Long Black", "category": "cold", "price": 4.5, "oldPrice": 5.5, "isDiscount": true, "isOutOfStock": false },
+  { "id": 5, "name": "Iced Americano", "category": "cold", "price": 4.0, "isDiscount": false, "isOutOfStock": false },
+  { "id": 6, "name": "Vegan Iced Latte", "category": "cold", "price": 6.0, "isDiscount": false, "isOutOfStock": false },
+  { "id": 7, "name": "Banana Cake", "category": "desserts", "price": 3.5, "isDiscount": false, "isOutOfStock": true },
+  { "id": 8, "name": "Autumnal Coffee", "category": "hot", "price": 5.0, "isDiscount": false, "isOutOfStock": false }
+]

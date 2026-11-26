@@ -1,0 +1,37 @@
+.cart {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.cart__items {
+  flex-grow: 1;
+}
+
+.cart__empty {
+  padding: 40px;
+  text-align: center;
+  background-color: var(--color-light);
+}
+
+.cart__summary {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background-color: var(--color-light);
+}
+
+.cart__summary-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.cart__total {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 600;
+}
